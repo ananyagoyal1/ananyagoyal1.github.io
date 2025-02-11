@@ -253,3 +253,33 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+/* Add these at the end of your style.css */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+/* Update project-details styling */
+.project-details {
+    display: none;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+}
