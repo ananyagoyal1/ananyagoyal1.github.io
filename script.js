@@ -19,3 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const projectDetails = document.getElementById('plantHealthProject');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const projectTitle = item.querySelector('.text').textContent;
+            if (projectTitle === 'Plant Health Evaluation') {
+                projectDetails.style.display = 'block';
+                projectDetails.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
