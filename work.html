@@ -7,29 +7,67 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <h1>ANANYA GOYAL</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="work.html">WORK</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </nav>
-        </header>
+    <nav class="main-nav">
+        <div class="nav-header">ANANYA GOYAL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">WORK</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
 
-        <main>
-            <section class="gallery">
-                <div class="gallery-grid">
-                    <!-- Your gallery items here -->
-                </div>
-            </section>
-        </main>
+    <div class="gallery">
+        <!-- Project 1: Spotify Clone -->
+        <div class="gallery-item">
+            <img src="images/" alt="Spotify Clone">
+            <div class="overlay">
+                <div class="text">Spotify Clone</div>
+            </div>
+        </div>
+
+        <!-- Project 2: Machine Learning Project -->
+        <div class="gallery-item">
+            <img src="images/a3.jpg" alt="ML Project">
+            <div class="overlay">
+                <div class="text">Machine Learning Projects</div>
+            </div>
+        </div>
     </div>
+
+    <!-- Project Details Section (Initially Hidden) -->
+    <div class="project-details" id="plantHealthProject" style="display: none;">
+        <h2>Plant Health Evaluation Using CNN</h2>
+        
+        <div class="project-images">
+            <img src="images/ml1.jpg" alt="Disease Detection" class="project-img">
+            <img src="images/ml2.jpg" alt="Age Estimation" class="project-img">
+            <img src="images/ml3.jpg" alt="Stress Analysis" class="project-img">
+        </div>
+
+        <div class="project-description">
+            <h3>Overview</h3>
+            <p>An advanced automated system for comprehensive plant health evaluation through leaf analysis, achieving high precision across four key modules.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Disease Detection (92% accuracy)
+                    <br>Custom CNN architecture for identifying plant diseases</li>
+                <li>Age Estimation (89% accuracy)
+                    <br>Web interface for leaf age classification</li>
+                <li>Stress Factor Analysis (91% accuracy)
+                    <br>Detection of water stress, nutrient deficiency, and pest infestation</li>
+                <li>Remedy Suggestion System
+                    <br>Targeted solutions with 90% relevance accuracy</li>
+            </ul>
+
+            <h3>Technologies Used</h3>
+            <p>Python, TensorFlow, CNN, Flask, HTML/CSS, Machine Learning</p>
+
+            <h3>Research Publication</h3>
+            <p>Published in the School of Computer Science and Engineering, VIT Chennai</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
