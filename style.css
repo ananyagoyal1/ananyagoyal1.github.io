@@ -4,10 +4,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-bg: #f7f7f7;
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+    --hover-color: #999999;
+    --overlay-bg: rgba(247, 247, 247, 0.95);
+    --border-color: #e0e0e0;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
-    color: #333333;
+    background: var(--main-bg);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -17,15 +26,17 @@ body {
     top: 0;
     width: 100%;
     padding: 20px;
-    background: white;
+    background: var(--main-bg);
     z-index: 1000;
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-header {
     font-size: 1.2em;
     margin-bottom: 15px;
     letter-spacing: 2px;
+    color: var(--text-dark);
 }
 
 .nav-links {
@@ -37,14 +48,14 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #333333;
+    color: var(--text-dark);
     font-size: 0.9em;
     letter-spacing: 1px;
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #999999;
+    color: var(--hover-color);
 }
 
 /* Gallery Grid */
@@ -57,6 +68,7 @@ body {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeIn 1s ease-out;
 }
 
 .gallery-item {
@@ -64,6 +76,7 @@ body {
     width: 100%;
     aspect-ratio: 1;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .gallery-item img {
@@ -79,7 +92,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--overlay-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +109,7 @@ body {
 }
 
 .text {
-    color: #333333;
+    color: var(--text-dark);
     font-size: 1.2em;
     text-align: center;
     padding: 20px;
@@ -114,10 +127,12 @@ body {
 .about-content h2 {
     margin-bottom: 30px;
     font-weight: 400;
+    color: var(--text-dark);
 }
 
 .about-text {
     margin-bottom: 40px;
+    color: var(--text-light);
 }
 
 /* Profile image styling */
@@ -153,8 +168,10 @@ body {
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     font-family: 'Montserrat', sans-serif;
+    background: var(--main-bg);
+    color: var(--text-dark);
 }
 
 .contact-form textarea {
@@ -163,15 +180,15 @@ body {
 
 .contact-form button {
     padding: 10px 20px;
-    background: #333333;
-    color: white;
+    background: var(--text-dark);
+    color: var(--main-bg);
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
-    background: #555555;
+    background: var(--text-light);
 }
 
 /* Project Details */
@@ -179,7 +196,8 @@ body {
     max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
-    background: white;
+    background: var(--main-bg);
+    border-top: 1px solid var(--border-color);
 }
 
 .project-images {
@@ -197,7 +215,7 @@ body {
 .project-img-container p {
     margin-top: 10px;
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-light);
 }
 
 .project-img {
@@ -209,6 +227,7 @@ body {
 
 .project-img:hover {
     transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .project-description {
@@ -218,6 +237,8 @@ body {
 .project-description h3 {
     margin: 25px 0 15px 0;
     font-weight: 500;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
 }
 
 .project-description ul {
@@ -227,11 +248,15 @@ body {
 
 .project-description li {
     margin: 15px 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
 }
 
 .project-description p {
     line-height: 1.6;
     margin: 10px 0;
+    color: var(--text-light);
 }
 
 /* Lightbox */
@@ -241,7 +266,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--overlay-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,6 +278,23 @@ body {
     max-width: 90%;
     max-height: 90vh;
     object-fit: contain;
+}
+
+/* Social Links */
+.social-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--hover-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive Design */
@@ -272,5 +314,17 @@ body {
 
     .project-images {
         grid-template-columns: 1fr;
+    }
+
+    :root {
+        --main-bg: #ffffff;
+    }
+
+    .project-details {
+        padding: 20px;
+    }
+
+    .nav-header {
+        font-size: 1em;
     }
 }
