@@ -5,52 +5,58 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.6;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     padding: 20px;
+    background: white;
+    z-index: 1000;
+    text-align: center;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    margin-bottom: 40px;
-}
-
-.logo h1 {
-    font-size: 24px;
-    font-weight: normal;
+.nav-header {
+    font-size: 1.2em;
+    margin-bottom: 15px;
     letter-spacing: 2px;
 }
 
-nav ul {
-    display: flex;
+.nav-links {
     list-style: none;
+    display: flex;
+    justify-content: center;
     gap: 30px;
 }
 
-nav a {
+.nav-links a {
     text-decoration: none;
-    color: #000000;
-    font-size: 14px;
+    color: #333333;
+    font-size: 0.9em;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav-links a:hover {
+    color: #999999;
 }
 
-.gallery-grid {
+/* Gallery Grid */
+.gallery {
+    margin-top: 120px;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gallery-item {
@@ -73,7 +79,7 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,46 +96,81 @@ nav a:hover {
 }
 
 .text {
-    color: #000000;
-    font-size: 16px;
+    color: #333333;
+    font-size: 1.2em;
     text-align: center;
+    padding: 20px;
 }
 
+/* About Page */
+.about-content {
+    margin-top: 120px;
+    padding: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content h2 {
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.about-text {
+    margin-bottom: 40px;
+}
+
+/* Contact Page */
+.contact-content {
+    margin-top: 120px;
+    padding: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background: #333333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #555555;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .gallery-grid {
+    .gallery {
         grid-template-columns: 1fr;
     }
-}
 
-/* Add these at the end of style.css */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    cursor: pointer;
-}
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-.lightbox img {
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
+    .main-nav {
+        padding: 15px;
+    }
 }
